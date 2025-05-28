@@ -1,40 +1,52 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 100vh;
+    min-height: 100vh;
+    color: #333;
+    transition: background-color 0.3s ease;
 }
 
 .todo-container {
     background-color: #fff;
-    margin-top: 40px;
-    padding: 20px 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    width: 320px;
+    margin-top: 50px;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 360px;
+    max-width: 90vw;
+    transition: box-shadow 0.3s ease;
+}
+
+.todo-container:hover {
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #222;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 1.2px;
 }
 
 .input-group {
     display: flex;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 input[type="text"] {
     flex-grow: 1;
-    padding: 10px;
+    padding: 12px 15px;
     font-size: 16px;
-    border: 2px solid #ddd;
-    border-radius: 4px 0 0 4px;
+    border: 2px solid #ccc;
+    border-radius: 6px 0 0 6px;
     outline: none;
+    transition: border-color 0.3s ease;
 }
 
 input[type="text"]:focus {
@@ -42,21 +54,37 @@ input[type="text"]:focus {
 }
 
 button {
-    padding: 10px 20px;
+    padding: 12px 25px;
     font-size: 16px;
     border: none;
     background-color: #007BFF;
     color: white;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 6px 6px 0;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #004494;
+    transform: scale(0.95);
 }
 
 input[type="checkbox"] {
-    margin-right: 10px;
-    width: 16px;
-    height: 16px;
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
     vertical-align: middle;
     cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+input[type="checkbox"]:hover {
+    transform: scale(1.2);
 }
 
 .todo-list {
@@ -66,9 +94,52 @@ input[type="checkbox"] {
 }
 
 .todo-item {
-    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 10px;
     border-bottom: 1px solid #eee;
     color: #555;
+    transition: background-color 0.3s ease;
+    border-radius: 6px;
+}
+
+.todo-item:hover {
+    background-color: #f9f9f9;
+}
+
+.todo-item label {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.todo-item span {
+    margin-left: 8px;
+    user-select: none;
+}
+
+.todo-item button {
+    background-color: #6c757d;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 15px;
+}
+
+.todo-item button:hover {
+    background-color: #5a6268;
+    transform: scale(1.1);
+}
+
+.todo-item button:active {
+    background-color: #4e555b;
+    transform: scale(0.95);
 }
 
 .note {
